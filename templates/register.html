@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:rgb(222, 237, 243);
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+            margin-top: 220px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: hsl(135, 89%, 21%);
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: hsl(106, 65%, 56%);
+        }
+        a {
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: hsl(108, 87%, 25%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+            <button type="submit">Register</button>
+        </form>
+        <a href="{%url 'login'%}">Click to Login</a>
+
+    </div>
+</body>
+</html>

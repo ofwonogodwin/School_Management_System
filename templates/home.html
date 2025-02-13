@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User page</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            font-size: x-large;
+            margin: 0;
+            padding: 0;
+            display: block;
+            align-items: center;
+            color: #040435;
+            justify-content: center;
+            background-color: rgb(222, 237, 243);
+            height: 100vh;
+        }
+
+        h2{
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 40px;
+          }
+        .container {
+            width: 60%;
+            max-width: 800px;
+            padding: 30px;
+            background: white;
+            border-radius: 8px;
+            margin-inline: auto;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group{
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .form-group label {h1{
+            text-align: center;
+            margin-bottom: 50px;
+            margin-top: 100px;
+          }
+
+            width: 200px;            
+            min-height: 100%;
+
+            font-size: 18px;
+            font-weight: bold;
+          
+        }
+       
+        .form-group input, .form-group select{
+            flex: 1;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid;
+            font-size: 16px;
+        }    
+        button {
+            width: 30%;
+            padding: 10px;
+            background: rgb(23, 23, 78);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            align-self: center;
+        }
+        button:hover {
+            background: #5d5de2;
+        }
+        a{
+            font-size: smaller;
+        }
+        footer{
+            text-align: center;
+            margin-top: 70px;
+            font-size: smaller;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center">Ministry Of Education & Sports</h1>
+    <h2 align="center">School Management System</h2>
+    <div class="container">
+        
+        <form method="post">
+            {%csrf_token%}
+            <div class="form-group">
+                <label for="schoolName" >School Name:</label>
+            
+            <input type="text" id="schoolName" placeholder="Enter School Name" name="schoolName" required>
+
+            </div>
+            <div class="form-group">
+                <label for="schoolLevel">School Level:</label>
+            <select id="schoolLevel" name="schoolLevel" required>
+                <option value="">Select Level</option>
+                <option value="Pre-Primary">Pre-Primary</option>
+                <option value="Primary">Primary</option>
+                <option value="Secondary">Secondary</option>
+                <option value="Tertiary">Tertiary</option>
+            </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="schoolLocation">School Location:</label> 
+            <input type="text" id="schoolLocation" placeholder="Enter School Location" name="schoolLocation" required>
+
+            </div>
+            
+            <div class="form-group">
+                <label for="numStudents">No of Students:</label>
+                <input type="number" id="numStudents" placeholder="Enter Number of Students" name="numStudents" required>
+    
+            </div>
+           
+            <button type="submit">Submit</button>
+        </form>
+        <a href="{%url 'logout'%}">Click Here to Logout</a>
+    </div>
+    <footer>U will always code less and debug more!!!!<br>Ofwono</footer>
+
+</body>
+</html>
