@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    "sms1",
+    "sms1.apps.Sms1Config",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
